@@ -1,0 +1,13 @@
+body{
+    margin: 0;
+    background-image: url('../img/opinion-bg.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.type-text{
+    font-size: 16px;
+    vertical-align: middle;
+}
+.zi{
+    color: red;
+}
