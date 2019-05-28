@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>意见反馈</title>
+    <link rel="stylesheet" type="text/css" href="css/easyui.css">
+    <link rel="stylesheet" type="text/css" href="css/icon.css">
+    <link rel="stylesheet" type="text/css" href="css/demo.css">
+    <link rel="stylesheet" type="text/css" href="css/opinion.css">
+</head>
+<body>
+    <!-- 类型：<select name="" id="">
+            <option value="">文件修改</option>
+            <option value="">文件增加</option>
+            <option value="">功能反馈</option>
+            </select>
+    内容：<textarea name="" id="" cols="30" rows="10"></textarea>
+    图片上传：<input type="file" name="" id="" >
+    联系方式：<input type="text" name="" id=""> -->
+	<!-- <div style="margin: 0% auto;"> -->
+        <div style="width: 500px;margin:0px auto;">
+    <div class="easyui-panel" title="意见反馈" style="width:500px;padding:30px 70px 50px 70px;">
+        <!-- <span ></span>  -->
+        <div class="type-text" ><span class="zi">*</span>&nbsp;类&nbsp;型:</div>
+        <select id="cc" style="width:100%;margin-bottom:20px;"></select>
+	<div id="sp">
+		<div style="color:#99BBE8;background:#fafafa;padding:10px;">选择一个类型</div>
+		<div  class="select-content" style="padding:10px;font-size: 16px;">
+			<input type="radio" name="lang" value="updata"><span>文件修改</span><br/>
+			<input type="radio" name="lang" value="insert"><span>文件增加</span><br/>
+			<input type="radio" name="lang" value="opinion"><span>功能反馈</span><br/>
+		</div>
+    </div>
+        <div style="margin-bottom:20px;margin-top:20px">
+			<div class="type-text"><span class="zi">*</span>&nbsp;内&nbsp;容:</div>
+			<textarea style="width:100%" cols="" rows="10">
+        </textarea>
+            </div>
+		<div style="margin-bottom:20px">
+			<div class="type-text">选择图片:</div>
+			<input class="easyui-filebox" name="file1" data-options="prompt:'选择一张图片...'" style="width:100%">
+		</div>
+		
+        <div style="margin-bottom:20px">
+			<div class="type-text">联系方式:</div>
+			<input class="easyui-textbox" style="width:100%">
+		</div>
+		<div>
+			<a href="#" class="easyui-linkbutton type-text" style="width:100%">提交反馈</a>
+		</div>
+    </div>
+</div>
+<!-- </div> -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="js/typeselect.js"></script>
+</body>
+</html>
