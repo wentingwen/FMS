@@ -10,3 +10,8 @@ $(function(){
         $('#cc').combo('setValue', v).combo('setText', s).combo('hidePanel');
     });
 });
+// $('#textarea-text').onfocus = function () {
+//     // this.className = "textbox-focused";
+//     // this.style.border-color = '#6b9cde';
+//     alert('聚焦啦');
+// };
