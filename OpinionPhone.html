@@ -1,3 +1,5 @@
+<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,49 +15,48 @@
 </head>
 
 <body>
-    <!-- 类型：<select name="" id="">
-            <option value="">文件修改</option>
-            <option value="">文件增加</option>
-            <option value="">功能反馈</option>
-            </select>
-    内容：<textarea name="" id="" cols="30" rows="10"></textarea>
-    图片上传：<input type="file" name="" id="" >
-    联系方式：<input type="text" name="" id=""> -->
-    <!-- <div style="margin: 0% auto;"> -->
     <div class="head-style">
-        <div class="easyui-panel" title="意见反馈" style="width:100%;height:100%;padding:3% 10% 2% 10%;font-size:20px; ">
+        <div class="easyui-panel" title="意见反馈" style="width:100%;height:100%;padding:2% 10% 2% 10%;font-size:20px; ">
             <!-- <span ></span>  -->
-            <div class="type-text"><span class="zi">*</span>&nbsp;类&nbsp;型:</div>
+            <div class="type-text"><span class="zi">*</span>&nbsp;&nbsp;反馈类型：</div>
             <select id="cc" style="width:100%;margin-bottom:3%;"></select>
             <div id="sp">
-                <div style="color:#99BBE8;background:#fafafa;padding:3%;font-size: 16px;">选择一个类型</div>
+                <div style="color:#99BBE8;background:#fafafa;padding:3%;font-size: 16px;">类 型:</div>
                 <div class="select-content" style="padding-left:5%;font-size: 16px;">
-                    <input type="radio" name="lang" value="updata" style="margin-top:3%;"><span>文件修改</span><br />
-                    <input type="radio" name="lang" value="insert" style="margin-top:3%;"><span>文件增加</span><br />
-                    <input type="radio" name="lang" value="opinion" style="margin-top:3%;"><span>功能反馈</span><br />
+                    <input type="radio" name="lang" value="文件修改" style="margin-top:3%;"><span>文件修改</span><br />
+                    <input type="radio" name="lang" value="文件增加" style="margin-top:3%;"><span>文件增加 </span><br />
+                    <input type="radio" name="lang" value="功能反馈" style="margin-top:3%;"><span>功能反馈</span><br />
                 </div>
             </div>
             <div style="margin-bottom:3%;margin-top:3%;width:100%;">
-                <div class="type-text"><span class="zi">*</span>&nbsp;内&nbsp;容（200字以内）:</div>
-                <!-- <textarea style="width:100%;font-size:14px;padding-left:0px;" rows="7" placeholder="请输入您的反馈内容，我们将不断改进！">
+                <div class="type-text"><span class="zi">*</span>&nbsp;&nbsp;内 容(200字以内)：</div>
+                <!-- <textarea style="width:100%;font-size:14px;padding-left:0px;" rows="7" placeholder="Ã¨Â¯Â·Ã¨Â¾ÂÃ¥ÂÂ¥Ã¦ÂÂ¨Ã§ÂÂÃ¥ÂÂÃ©Â¦ÂÃ¥ÂÂÃ¥Â®Â¹Ã¯Â¼ÂÃ¦ÂÂÃ¤Â»Â¬Ã¥Â°ÂÃ¤Â¸ÂÃ¦ÂÂ­Ã¦ÂÂ¹Ã¨Â¿ÂÃ¯Â¼Â">
         </textarea> -->
-        <textarea name="" id="textarea-text" rows="7" class="textarea-text" placeholder="请输入您的反馈内容，我们将不断改进！"></textarea>
+                <textarea name="" id="textarea-text" rows="7" class="textarea-text" placeholder="请输入您的意见，我们将不断改进！"
+                    onkeyup="countNum(this)"></textarea>
+                <div id="countNum" style="color: #cccccc;font-size: 13px;"><span id="num">200</span>/200</div>
+
             </div>
             <div style="margin-bottom:3%">
-                <div class="type-text">选择图片:</div>
-                <input class="easyui-filebox" name="file" data-options="prompt:'选择一张图片...'" style="width:100%">
+                <div class="type-text">选择图片：</div>
+                <!-- <input type="file" id="chooseImg" name="img"/> -->
+                <input class="easyui-filebox" name="img" data-options="prompt:'选择您要上传的图片，格式为.jpg/.gif/.png/.bmp'" style="width:100%">
+                <!-- <input type="file" name="" id="file-btn" class="file-btn" placeholder="prompt:'选择您要上传的图片，格式为.jpg/.gif/.png/.bmp'"> -->
+                <!-- <div class="img-show"></div> -->
+                
             </div>
             <div style="margin-bottom:3%">
-                <div class="type-text">姓名:</div>
-                <input class="easyui-textbox" style="width:100%">
+                <div class="type-text">姓名：</div>
+                <input class="easyui-textbox" id="userName" style="width:100%">
             </div>
             <div style="margin-bottom:3%">
-                <div class="type-text">联系方式:</div>
-                <input class="easyui-textbox" style="width:100%">
+                <div class="type-text">联系方式：</div>
+                <input class="easyui-textbox" id="userTelOrEmail" style="width:100%">
             </div>
             <div>
                 <a href="#" class="easyui-linkbutton type-text"
-                    style="width:100%;height:40px;background: #99BBE8;margin-top:3%;font-size: 16px;">提交反馈</a>
+                    style="width:100%;height:40px;background: #99BBE8;margin-top:3%;font-size: 16px;"
+                    onclick="postOpinion()">提交反馈</a>
             </div>
         </div>
     </div>
@@ -63,6 +64,8 @@
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="js/typeselect.js"></script>
+    <script type="text/javascript" src="js/opinionPost.js"></script>
+    <script type="text/javascript" src="js/ajaxfileupload.js"></script>
 </body>
 
 </html>

@@ -9,9 +9,11 @@ $(function(){
         var s = $(this).next('span').text();
         $('#cc').combo('setValue', v).combo('setText', s).combo('hidePanel');
     });
+    // $('#up>span>input')[0].click(function() {
+    //     alert("nihao00");
+    // });
+    // (function(){
+    //     alert("hello");
+    // });
 });
-// $('#textarea-text').onfocus = function () {
-//     // this.className = "textbox-focused";
-//     // this.style.border-color = '#6b9cde';
-//     alert('聚焦啦');
-// };
+
